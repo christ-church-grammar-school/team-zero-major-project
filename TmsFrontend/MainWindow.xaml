@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TmsFrontend"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        WindowState="Maximized"
+        Title="Student Tests" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
+            <Button x:Name="_1" Content="Page 1" MinWidth="100" Click="ButtonClickP1"/>
+            <Button x:Name="_2" Content="Page 2" MinWidth="100" Margin="10,0,0,0" Click="ButtonClickP2"/>
+        </StackPanel>
+        <Frame x:Name="Main" Margin="0,35,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

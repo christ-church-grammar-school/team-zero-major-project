@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace TmsFrontend
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for StudentResultsMain.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StudentResultsMain : Page
     {
-        public MainWindow()
+        public StudentResultsMain()
         {
             InitializeComponent();
-        }
-
-        private void ButtonClickP2(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new StudentResultsMain();
-        }
-
-        private void ButtonClickP1(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new StudentTestsMain();
         }
     }
 }

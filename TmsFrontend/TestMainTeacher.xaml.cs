@@ -10,29 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TmsFrontend
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for TestMainTeacher.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class TestMainTeacher : Window
     {
-        public MainWindow()
+        public TestMainTeacher()
         {
             InitializeComponent();
-        }
-
-        private void ButtonClickP2(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new StudentResultsMain();
-        }
-
-        private void ButtonClickP1(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new StudentTestsMain();
         }
     }
 }
