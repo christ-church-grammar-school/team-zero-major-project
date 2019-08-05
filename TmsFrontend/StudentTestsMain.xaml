@@ -8,8 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="StudentTestsMain">
 
-    <Grid Background="Red">
-        <TextBlock HorizontalAlignment="Left" Height="233" Margin="218,126,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="356"/>
-
+    <Grid Background="White">
+       
     </Grid>
 </Page>

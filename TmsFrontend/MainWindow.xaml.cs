@@ -34,5 +34,10 @@ namespace TmsFrontend
         {
             Main.Content = new StudentTestsMain();
         }
+
+        private void Main_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
     }
 }

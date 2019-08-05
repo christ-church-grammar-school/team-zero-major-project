@@ -6,12 +6,20 @@
         xmlns:local="clr-namespace:TmsFrontend"
         mc:Ignorable="d"
         WindowState="Maximized"
-        Title="Student Tests" Height="450" Width="800">
-    <Grid>
-        <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
-            <Button x:Name="_1" Content="Page 1" MinWidth="100" Click="ButtonClickP1"/>
-            <Button x:Name="_2" Content="Page 2" MinWidth="100" Margin="10,0,0,0" Click="ButtonClickP2"/>
-        </StackPanel>
-        <Frame x:Name="Main" Margin="0,35,0,0" NavigationUIVisibility="Hidden"/>
+        Title="Student" Height="450" Width="800">
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="_1" Content="Tests" MinWidth="100" Click="ButtonClickP1" Width="100" HorizontalAlignment="Center" Grid.Column="1" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="20" FontWeight="Bold" Margin="69,0,69.5,0" Foreground="White"/>
+        <Button x:Name="_2" Content="Results" MinWidth="100" Click="ButtonClickP2" Width="100" HorizontalAlignment="Center" Grid.Column="2" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Bold" FontSize="20" Margin="69.5,0,69,0" Foreground="White" />
+        <Frame x:Name="Main" Margin="0,0,0,0.5" NavigationUIVisibility="Hidden" Navigated="Main_Navigated" Grid.Row="1" Grid.ColumnSpan="4"/>
     </Grid>
 </Window>
