@@ -7,7 +7,16 @@
         mc:Ignorable="d"
         WindowState="Maximized"
         Title="Student" Height="450" Width="800">
+
+ 
     <Grid Background="Black">
+        <NavigationView x:Name="NavigationViewControl" >
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="A" x:Name="A" />
+                <NavigationViewItem Content="B" x:Name="B" />
+                <NavigationViewItem Content="C" x:Name="C" />
+            </NavigationView.MenuItems>
+        </NavigationView>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20*"/>
             <ColumnDefinition Width="30*"/>
