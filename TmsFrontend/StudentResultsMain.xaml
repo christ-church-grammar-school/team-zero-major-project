@@ -8,5 +8,28 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="StudentResultsMain">
 
-    <Grid Background="White"/>
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Name="ResultsList" HorizontalContentAlignment="Stretch" Foreground="{x:Null}" BorderThickness="0" BorderBrush="{x:Null}">
+            <ListBox.Background>
+                <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
+            </ListBox.Background>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding TestName}" Click="Test1"
+                            Height="100" FontSize="18" BorderBrush="{x:Null}"
+                            Foreground="White" Margin="0,-2,0,0">
+                        <Button.Background>
+                            <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
+                        </Button.Background>
+                    </Button>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
 </Page>

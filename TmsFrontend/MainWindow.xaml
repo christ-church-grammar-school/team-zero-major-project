@@ -8,7 +8,11 @@
         WindowState="Maximized"
         WindowStyle="None"
         Title="Student" Height="450" Width="800">
-    <Grid Background="White">
+
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20*"/>
             <ColumnDefinition Width="30*"/>
@@ -19,9 +23,12 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="_1" Content="Tests" MinWidth="100" Click="ButtonClickP1" Width="100" HorizontalAlignment="Center" Grid.Column="1" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="20" FontWeight="Bold" Margin="69,0,69.5,0" Foreground="Black"/>
-        <Button x:Name="_2" Content="Results" MinWidth="100" Click="ButtonClickP2" Width="100" HorizontalAlignment="Center" Grid.Column="2" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Bold" FontSize="20" Margin="69.5,0,69,0" Foreground="Black" />
-        <Frame x:Name="Main" Margin="0,0,0,0.5" NavigationUIVisibility="Hidden" Navigated="Main_Navigated" Grid.Row="1" Grid.ColumnSpan="4"/>
-        <TextBlock TextWrapping="Wrap" Text="TmsFrontend" FontWeight="Bold" FontSize="20" Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button x:Name="_1" Content="Tests" MinWidth="100" Click="ButtonClickP1" Width="100" HorizontalAlignment="Center" Grid.Column="1" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="20" FontWeight="Bold" Margin="69,0,69.5,0" Foreground="White"/>
+        <Button x:Name="_2" Content="Results" MinWidth="100" Click="ButtonClickP2" Width="100" HorizontalAlignment="Center" Grid.Column="2" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Bold" FontSize="20" Margin="69.5,0,69,0" Foreground="White" />
+        <Frame x:Name="Main" Margin="0,0,0,0.5" NavigationUIVisibility="Hidden" Navigated="Main_Navigated" Grid.Row="1" Grid.ColumnSpan="4">
+            <Frame.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
+            </Frame.BorderBrush>
+        </Frame>
     </Grid>
 </Window>

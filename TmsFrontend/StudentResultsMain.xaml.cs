@@ -23,6 +23,30 @@ namespace TmsFrontend
         public StudentResultsMain()
         {
             InitializeComponent();
+            setNames();
         }
+
+        public void setNames()
+        {
+            List<ResultItem> items = new List<ResultItem>();
+            items.Add(new ResultItem() { TestName = "Test A" });
+            items.Add(new ResultItem() { TestName = "Test B" });
+            items.Add(new ResultItem() { TestName = "Test C" });
+            items.Add(new ResultItem() { TestName = "Test D" });
+
+            ResultsList.ItemsSource = items;
+        }
+
+        private void Test1(object sender, RoutedEventArgs e)
+        {
+            var buttonHolder = sender as Button;
+            MessageBox.Show(buttonHolder.Content as String);
+        }
+    }
+
+
+    public class ResultItem
+    {
+        public string TestName { get; set; }
     }
 }
