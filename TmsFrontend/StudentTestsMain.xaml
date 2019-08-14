@@ -5,10 +5,25 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TmsFrontend"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="2000" d:DesignWidth="3000"
       Title="StudentTestsMain">
 
     <Grid Background="White">
-       
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Begin" Margin="20" Click="BeginButton_Click" Grid.Column="3" Grid.Row="3"/>
+        <ListBox Margin="5,0,5,5" Grid.Row="1"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.RowSpan="3" Grid.ColumnSpan="4"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.RowSpan="3"/>
+        <TextBlock Margin="20,20,20,0" TextWrapping="Wrap" Text="Available Tests" FontWeight="Bold" FontSize="36" TextAlignment="Center"/>
     </Grid>
 </Page>

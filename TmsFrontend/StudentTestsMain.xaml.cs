@@ -23,6 +23,14 @@ namespace TmsFrontend
         public StudentTestsMain()
         {
             InitializeComponent();
+
         }
+
+        private void BeginButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window win2 = new Window();
+            win2.Show();
+        }
+
     }
 }
