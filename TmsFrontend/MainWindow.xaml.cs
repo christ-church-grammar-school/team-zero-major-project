@@ -23,16 +23,17 @@ namespace TmsFrontend
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void ButtonClickP2(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new StudentResultsMain();
+            Main.Content = new StudentTestsMain();
         }
 
         private void ButtonClickP1(object sender, RoutedEventArgs e)
         {
             Main.Content = new StudentTestsMain();
+        }
+
+        private void ButtonClickP2(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new StudentResultsMain();
         }
 
         private void Main_Navigated(object sender, NavigationEventArgs e)
