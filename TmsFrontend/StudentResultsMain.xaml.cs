@@ -33,6 +33,7 @@ namespace TmsFrontend
             items.Add(new ResultItem() { ResultName = "Test B" });
             items.Add(new ResultItem() { ResultName = "Test C" });
             items.Add(new ResultItem() { ResultName = "Test D" });
+            items.Add(new ResultItem() { ResultName = "Test E" });
 
             ResultsList.ItemsSource = items;
         }
