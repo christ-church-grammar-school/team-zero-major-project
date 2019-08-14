@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:TmsFrontend"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <Color x:Key="Blue(Saphire)">#FF0F52BA</Color>
+
     </Application.Resources>
 </Application>
