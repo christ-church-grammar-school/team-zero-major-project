@@ -8,7 +8,6 @@
         WindowState="Maximized"
         WindowStyle="None"
         Title="Student" Height="450" Width="800">
-
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
