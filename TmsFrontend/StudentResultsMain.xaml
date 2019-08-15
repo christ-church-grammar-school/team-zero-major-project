@@ -30,7 +30,7 @@
             </ListBox.Background>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Button Content="{Binding ResultName}" Click="Test1"
+                    <Button Content="{Binding ResultName}" Click="ChangeTest"
                             Height="100" FontSize="18" BorderBrush="{x:Null}"
                             Foreground="White" Margin="0,0,0,0">
                         <Button.Background>

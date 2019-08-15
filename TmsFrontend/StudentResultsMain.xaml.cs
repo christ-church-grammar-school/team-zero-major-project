@@ -38,7 +38,7 @@ namespace TmsFrontend
             ResultsList.ItemsSource = items;
         }
 
-        private void Test1(object sender, RoutedEventArgs e)
+        private void ChangeTest(object sender, RoutedEventArgs e)
         {
             var buttonHolder = sender as Button;
             MessageBox.Show(buttonHolder.Content as String);
