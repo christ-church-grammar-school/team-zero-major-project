@@ -26,19 +26,37 @@ namespace TmsFrontend
             Main.Content = new StudentTestsMain();
         }
 
-        private void ButtonClickP1(object sender, RoutedEventArgs e)
+        private void ButtonClickTest(object sender, RoutedEventArgs e)
         {
             Main.Content = new StudentTestsMain();
+            ChangeButtonColour(sender);
         }
 
-        private void ButtonClickP2(object sender, RoutedEventArgs e)
+        private void ButtonClickResult(object sender, RoutedEventArgs e)
         {
             Main.Content = new StudentResultsMain();
+            ChangeButtonColour(sender);
         }
 
         private void Main_Navigated(object sender, NavigationEventArgs e)
         {
 
+        }
+
+        public void ChangeButtonColour(object sender)
+        {
+            var buttonHolder = sender as Button;
+
+            if (buttonHolder.Content as string == "Tests")
+            {
+                TestButton.Foreground = Brushes.Black;
+                ResultButton.Foreground = Brushes.White;
+            }
+            else if (buttonHolder.Content as string == "Results")
+            {
+                ResultButton.Foreground = Brushes.Black;
+                TestButton.Foreground = Brushes.White;
+            }
         }
     }
 }

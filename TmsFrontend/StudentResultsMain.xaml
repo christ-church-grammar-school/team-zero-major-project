@@ -15,21 +15,87 @@
             <ColumnDefinition Width="30*"/>
             <ColumnDefinition Width="20*"/>
         </Grid.ColumnDefinitions>
-        <ListBox Name="ResultsList" HorizontalContentAlignment="Stretch" Foreground="{x:Null}" BorderThickness="0" BorderBrush="{x:Null}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <ListBox Name="ResultsList" HorizontalContentAlignment="Stretch"
+                 Foreground="{x:Null}" BorderThickness="0"
+                 BorderBrush="{x:Null}" Grid.RowSpan="5">
             <ListBox.Background>
                 <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
             </ListBox.Background>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Button Content="{Binding TestName}" Click="Test1"
+                    <Button Content="{Binding ResultName}" Click="Test1"
                             Height="100" FontSize="18" BorderBrush="{x:Null}"
-                            Foreground="White" Margin="0,-2,0,0">
+                            Foreground="White" Margin="0,0,0,0">
                         <Button.Background>
-                            <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
+                            <SolidColorBrush
+                                Color="{DynamicResource Blue(Saphire)}"/>
                         </Button.Background>
                     </Button>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center" Grid.Row="1" FontSize="24">
+                   <Run FontWeight="Bold" Text="Score: "/><Run Text="23/25"/>
+        </TextBlock>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center" Grid.Row="2" FontSize="24">
+                   <Run FontWeight="Bold" Text="Percentage:"/>
+                   <Run Text=" 92%"/></TextBlock>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center" Grid.Row="3" FontSize="24">
+                   <Run FontWeight="Bold" Text="Grade: "/><Run Text="A"/>
+        </TextBlock>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center" Grid.Row="4" FontSize="24">
+                   <Run FontWeight="Bold" Text="Class Average:"/>
+                   <Run Text=" 76%"/></TextBlock>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Margin="0"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center" Grid.Row="1" FontSize="24">
+                   <Run FontWeight="Bold" Text="Questions:"/><Run Text=" 5"/>
+        </TextBlock>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Margin="0"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center" Grid.Row="2" FontSize="24">
+                   <Run FontWeight="Bold" Text="Time Limit: "/>
+                   <Run Text="50 minutes"/></TextBlock>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Margin="0"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center" Grid.Row="3" FontSize="24">
+                   <Run FontWeight="Bold" Text="Set By: "/>
+                   <Run Text="Graham Nolan"/></TextBlock>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Margin="0"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center" Grid.Row="4" FontSize="24">
+                   <Run FontWeight="Bold" Text="Topic: "/><Run Text="C#"/>
+        </TextBlock>
+        <TextBlock Grid.ColumnSpan="2" Grid.Column="1" Margin="0"
+                   TextWrapping="Wrap" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" FontSize="40"
+                   Text="C# Practical Programming Test"
+                   />
+        <Button x:Name="ResultsNewWindowButton" Content="View Indepth" Grid.Column="3" Margin="40" Grid.Row="4" FontSize="24">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <SolidColorBrush Color="White"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>

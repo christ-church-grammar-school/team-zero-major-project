@@ -5,9 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TmsFrontend"
       mc:Ignorable="d"
-      Title="StudentTestsMain" d:DesignWidth="234.923" d:DesignHeight="128.005">
+      Title="StudentTestsMain">
 
-    <Grid Background="White">
+    <Grid Background="White" Margin="0,0,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20*"/>
             <ColumnDefinition Width="30*"/>
