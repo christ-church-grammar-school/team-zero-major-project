@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:TmsFrontend"
         mc:Ignorable="d"
         WindowState="Maximized"
-        WindowStyle="None"
         Title="Student" Height="450" Width="800">
     <Grid>
         <Grid.Background>

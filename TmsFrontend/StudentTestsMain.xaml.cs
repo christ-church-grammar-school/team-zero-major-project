@@ -23,7 +23,24 @@ namespace TmsFrontend
         public StudentTestsMain()
         {
             InitializeComponent();
+            setNames();
+        }
 
+        public void setNames()
+        {
+            List<TestItem> items = new List<TestItem>();
+            items.Add(new TestItem() { TestName = "Test A" });
+            items.Add(new TestItem() { TestName = "Test B" });
+            items.Add(new TestItem() { TestName = "Test C" });
+            items.Add(new TestItem() { TestName = "Test D" });
+
+            ResultsList.ItemsSource = items;
+        }
+
+        private void Test1(object sender, RoutedEventArgs e)
+        {
+            var buttonHolder = sender as Button;
+            MessageBox.Show(buttonHolder.Content as String);
         }
 
         private void BeginButton_Click(object sender, RoutedEventArgs e)
@@ -31,6 +48,10 @@ namespace TmsFrontend
             Window win2 = new Window();
             win2.Show();
         }
+    }
 
+    public class TestItem
+    {
+        public string TestName { get; set; }
     }
 }
