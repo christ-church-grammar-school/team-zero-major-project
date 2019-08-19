@@ -27,6 +27,8 @@ namespace TmsFrontend
             InitializeComponent();
             setNames();
             setTests();
+
+            changeTextBlocks(TestInfos[0].Title as string);
         }
 
         public void setTests()
@@ -79,18 +81,48 @@ namespace TmsFrontend
             foreach (var item in TestInfos)
             {
                 if(item.Title == selectedTest)
-                {
+                {                    
                     TitleBox.Text = item.Title;
-                    ScoreBox.Text = item.Score;
-                    PercentageBox.Text = item.Percentage;
-                    GradeBox.Text = item.Grade;
-                    AverageBox.Text = item.Average;
-                    QuestionsBox.Text = item.Questions;
-                    TimeLimitBox.Text = item.TimeLimit;
-                    SetByBox.Text = item.SetBy;
-                    TopicBox.Text = item.Topic;
+                    TitleBox.FontWeight = FontWeights.ExtraBold;
+
+                    ScoreBox.Text = "Score: ";
+                    ScoreBox.FontWeight = FontWeights.Bold;
+                    ScoreBox.Inlines.Add(new Run(item.Score) { FontWeight = FontWeights.Normal });
+
+                    PercentageBox.Text = "Percentage: ";
+                    PercentageBox.FontWeight = FontWeights.Bold;
+                    PercentageBox.Inlines.Add(new Run(item.Percentage) { FontWeight = FontWeights.Normal });
+
+                    GradeBox.Text = "Grade: ";
+                    GradeBox.FontWeight = FontWeights.Bold;
+                    GradeBox.Inlines.Add(new Run(item.Grade) { FontWeight = FontWeights.Normal });
+
+                    AverageBox.Text = "Class Average: ";
+                    AverageBox.FontWeight = FontWeights.Bold;
+                    AverageBox.Inlines.Add(new Run(item.Average) { FontWeight = FontWeights.Normal });
+
+                    QuestionsBox.Text = "Questions: ";
+                    QuestionsBox.FontWeight = FontWeights.Bold;
+                    QuestionsBox.Inlines.Add(new Run(item.Questions) { FontWeight = FontWeights.Normal });
+
+                    TimeLimitBox.Text = "Time Limit: ";
+                    TimeLimitBox.FontWeight = FontWeights.Bold;
+                    TimeLimitBox.Inlines.Add(new Run(item.TimeLimit) { FontWeight = FontWeights.Normal });
+
+                    SetByBox.Text = "Set By: ";
+                    SetByBox.FontWeight = FontWeights.Bold;
+                    SetByBox.Inlines.Add(new Run(item.SetBy) { FontWeight = FontWeights.Normal });
+
+                    TopicBox.Text = "Topic: ";
+                    TopicBox.FontWeight = FontWeights.Bold;
+                    TopicBox.Inlines.Add(new Run(item.Topic) { FontWeight = FontWeights.Normal });
                 }
             }
+        }
+
+        private void ResultsInDepth(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("New Window");
         }
     }
 
