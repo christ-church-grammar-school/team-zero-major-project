@@ -23,10 +23,6 @@
         </Grid.RowDefinitions>
         <Button x:Name="TestButton" Content="Tests" MinWidth="100" Click="ButtonClickTest" Width="100" HorizontalAlignment="Center" Grid.Column="1" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="20" FontWeight="Bold" Margin="69,0,69.5,0" Foreground="White"/>
         <Button x:Name="ResultButton" Content="Results" MinWidth="100" Click="ButtonClickResult" Width="100" HorizontalAlignment="Center" Grid.Column="2" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Bold" FontSize="20" Margin="69.5,0,69,0" Foreground="White" />
-        <Frame x:Name="Main" Margin="0,0,0,0.5" NavigationUIVisibility="Hidden" Navigated="Main_Navigated" Grid.Row="1" Grid.ColumnSpan="4">
-            <Frame.BorderBrush>
-                <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
-            </Frame.BorderBrush>
-        </Frame>
+        <Frame x:Name="Main" Margin="0,0,0,0.5" NavigationUIVisibility="Hidden" Navigated="Main_Navigated" Grid.Row="1" Grid.ColumnSpan="4" BorderBrush="#FF0F52BA"/>
     </Grid>
 </Window>
