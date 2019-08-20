@@ -122,7 +122,7 @@ namespace TmsFrontend
 
         private void ResultsInDepth(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("New Window");
+            MessageBox.Show("New Windowgi");
         }
     }
 
