@@ -35,11 +35,7 @@ namespace TmsFrontend
         {
             TestPreview.Add(new TestPreview()
             {
-                Score = "21/25",
-                Percentage = "92%",
-                Grade = "A",
                 Questions = "5",
-                Average = "67%",
                 TimeLimit = "50 Minutes",
                 SetBy = "Graham Nolan",
                 Topic = "C#",
@@ -48,11 +44,7 @@ namespace TmsFrontend
 
             TestPreview.Add(new TestPreview()
             {
-                Score = "22/25",
-                Percentage = "88%",
-                Grade = "A",
                 Questions = "5",
-                Average = "70%",
                 TimeLimit = "50 Minutes",
                 SetBy = "Graham Nolan",
                 Topic = "WPF",
@@ -91,22 +83,6 @@ namespace TmsFrontend
                     TitleBox.Text = item.Title;
                     TitleBox.FontWeight = FontWeights.ExtraBold;
 
-                    ScoreBox.Text = "Score: ";
-                    ScoreBox.FontWeight = FontWeights.Bold;
-                    ScoreBox.Inlines.Add(new Run(item.Score) { FontWeight = FontWeights.Normal });
-
-                    PercentageBox.Text = "Percentage: ";
-                    PercentageBox.FontWeight = FontWeights.Bold;
-                    PercentageBox.Inlines.Add(new Run(item.Percentage) { FontWeight = FontWeights.Normal });
-
-                    GradeBox.Text = "Grade: ";
-                    GradeBox.FontWeight = FontWeights.Bold;
-                    GradeBox.Inlines.Add(new Run(item.Grade) { FontWeight = FontWeights.Normal });
-
-                    AverageBox.Text = "Class Average: ";
-                    AverageBox.FontWeight = FontWeights.Bold;
-                    AverageBox.Inlines.Add(new Run(item.Average) { FontWeight = FontWeights.Normal });
-
                     QuestionsBox.Text = "Questions: ";
                     QuestionsBox.FontWeight = FontWeights.Bold;
                     QuestionsBox.Inlines.Add(new Run(item.Questions) { FontWeight = FontWeights.Normal });
@@ -126,9 +102,10 @@ namespace TmsFrontend
             }
         }
 
-        private void ResultsInDepth(object sender, RoutedEventArgs e)
+        private void TestInDepth(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("New Window");
+            InsideTest insideTest = new InsideTest();
+            insideTest.Show();
         }
     }
 

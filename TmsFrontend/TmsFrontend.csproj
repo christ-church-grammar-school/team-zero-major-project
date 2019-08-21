@@ -55,12 +55,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="InsideResult.xaml.cs">
+      <DependentUpon>InsideResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InsideTest.xaml.cs">
+      <DependentUpon>InsideTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StudentResultsMain.xaml.cs">
       <DependentUpon>StudentResultsMain.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudentTestsMain.xaml.cs">
       <DependentUpon>StudentTestsMain.xaml</DependentUpon>
     </Compile>
+    <Page Include="InsideResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InsideTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
