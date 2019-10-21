@@ -25,8 +25,8 @@ namespace TmsFrontend
         public StudentResultsMain()
         {
             InitializeComponent();
-            setNames();
             setTests();
+            setNames();
 
             changeTextBlocks(TestInfos[0].Title as string);
         }
@@ -35,7 +35,7 @@ namespace TmsFrontend
         {
             TestInfos.Add(new TestInfo()
             {
-                Score = "21/25",
+                Score = "23/25",
                 Percentage = "92%",
                 Grade = "A",
                 Questions = "5",
@@ -63,9 +63,12 @@ namespace TmsFrontend
         public void setNames()
         {
             List<ResultItem> items = new List<ResultItem>();
-            items.Add(new ResultItem() { ResultName = "C# Practical Programming Test" });
-            items.Add(new ResultItem() { ResultName = "WPF Test" });
 
+            foreach(var item in TestInfos)
+            {
+                items.Add(new ResultItem() { ResultName =  item.Title});
+            }
+            
             ResultsList.ItemsSource = items;
         }
 
@@ -81,7 +84,7 @@ namespace TmsFrontend
             foreach (var item in TestInfos)
             {
                 if(item.Title == selectedTest)
-                {                    
+                {
                     TitleBox.Text = item.Title;
                     TitleBox.FontWeight = FontWeights.ExtraBold;
 
