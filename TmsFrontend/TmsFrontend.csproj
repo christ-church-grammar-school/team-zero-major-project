@@ -70,6 +70,7 @@
     <Compile Include="StudentTestsMain.xaml.cs">
       <DependentUpon>StudentTestsMain.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UsernameBox\Content.cs" />
     <Page Include="InsideResult.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

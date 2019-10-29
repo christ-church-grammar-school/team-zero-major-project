@@ -42,10 +42,10 @@
             <TextBox x:Name="UsernameBox" Grid.Column="1" Margin="20,50,20,60" Grid.Row="1"
                      TextWrapping="Wrap" Background="#FFE2E2E2" 
                      BorderBrush="{x:Null}" FontSize="24"
-                     />
-            <PasswordBox Grid.Column="1" Margin="20,50,20,60"
+                     Text="{Binding loginUserName}"/> 
+            <PasswordBox x:Name="PasswordBox" Grid.Column="1" Margin="20,50,20,60"
                          Grid.Row="2" BorderBrush="{x:Null}"
-                         Background="#FFE2E2E2" FontSize="24"/>
+                         Background="#FFE2E2E2" FontSize="24" KeyDown="EnterKeyPasswordBox"/>
             <TextBlock Grid.Column="1" HorizontalAlignment="Left"
                        Margin="20,10.5,0,0" Grid.Row="1" TextWrapping="Wrap"
                        Text="User Name:" VerticalAlignment="Top" FontSize="24">
@@ -61,7 +61,7 @@
                         Color="{DynamicResource Blue(Saphire)}"/>
                 </TextBlock.Foreground>
             </TextBlock>
-            <Button Content="Login" Grid.Column="1" Margin="20,-20,20,40" Grid.Row="3" Background="White" BorderBrush="White" FontSize="24">
+            <Button x:Name="LoginButton" Content="Login" Grid.Column="1" Margin="20,-20,20,40" Grid.Row="3" Background="White" BorderBrush="White" FontSize="24" Click="Login">
                 <Button.Foreground>
                     <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
                 </Button.Foreground>
