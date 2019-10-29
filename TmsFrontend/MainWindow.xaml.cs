@@ -23,7 +23,7 @@ namespace TmsFrontend
         public MainWindow()
         {
             InitializeComponent();
-            Main.Content = new StudentTestsMain();
+            Main.Content = new Page1(); //Login Page
         }
 
         private void ButtonClickTest(object sender, RoutedEventArgs e)
