@@ -20,27 +20,38 @@ namespace TmsFrontend
     /// </summary>
     public partial class MainWindow : Window
     {
+        StudentTestsMain testsPage = new StudentTestsMain();
+        StudentResultsMain resultsPage = new StudentResultsMain();
+
         public MainWindow()
         {
             InitializeComponent();
-            Main.Content = new Page1(); //Login Page
+
+            LoginPage();
+        }
+
+        public void LoginPage()
+        {
+            Page1 loginPage = new Page1(); //Login Page
+            var contentCopy = Content;
+            Content = loginPage;
+            loginPage.ladder += (object sender, EventArgs e) =>
+            {
+                Content = contentCopy;
+            };
+            Main.Content = testsPage;
         }
 
         private void ButtonClickTest(object sender, RoutedEventArgs e)
         {
-            Main.Content = new StudentTestsMain();
+            Main.Content = testsPage;
             ChangeButtonColour(sender);
         }
 
         private void ButtonClickResult(object sender, RoutedEventArgs e)
         {
-            Main.Content = new StudentResultsMain();
+            Main.Content = resultsPage;
             ChangeButtonColour(sender);
-        }
-
-        private void Main_Navigated(object sender, NavigationEventArgs e)
-        {
-
         }
 
         public void ChangeButtonColour(object sender)
@@ -57,6 +68,16 @@ namespace TmsFrontend
                 ResultButton.Foreground = Brushes.Black;
                 TestButton.Foreground = Brushes.White;
             }
+        }
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            LoginPage();
+        }
+
+        private void Main_Navigated(object sender, NavigationEventArgs e)
+        {
+            //Code breaks when function removed
         }
     }
 }

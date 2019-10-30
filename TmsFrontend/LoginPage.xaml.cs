@@ -22,6 +22,7 @@ namespace TmsFrontend
 
     public partial class Page1 : Page
     {
+        public EventHandler ladder;
         public string loginUserName { get; set; }
 
         List<StudentLogin> logins = new List<StudentLogin> { };
@@ -42,16 +43,16 @@ namespace TmsFrontend
                 {
                     if (this.PasswordBox.Password == item.CorrectPassword)
                     {
-                        MessageBox.Show("Login Successful");
+                        ClimbLadder();
                     }
                     else
                     {
-                        MessageBox.Show("Login Credentials Incorrect");
+                        MessageBox.Show("Login credentials incorrect retard");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Login Credentials Incorrect");
+                    MessageBox.Show("Login credentials incorrect retard");
                 }
             }
         }
@@ -69,8 +70,13 @@ namespace TmsFrontend
             logins.Add(new StudentLogin()
             {
                 CorrectUsername = "Moox",
-                CorrectPassword = "Angoos"
+                CorrectPassword = "Angoose"
             });
+        }
+
+        private void ClimbLadder()
+        {
+            ladder(this, EventArgs.Empty);
         }
     }
 
