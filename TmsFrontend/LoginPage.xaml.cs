@@ -25,6 +25,8 @@ namespace TmsFrontend
         public EventHandler ladder;
         public string loginUserName { get; set; }
 
+        public int studentKey;
+
         List<StudentLogin> logins = new List<StudentLogin> { };
 
         public Page1()
@@ -32,29 +34,40 @@ namespace TmsFrontend
             InitializeComponent();
             DataContext = this;
 
-            createDummyStudent();
+            createDummyStudents();
         }
 
         private void Login(object sender, RoutedEventArgs e)
         {
+            int breaker = 0;
+            bool fault = false;
+
             foreach(var item in logins)
             {
-                if (loginUserName == item.CorrectUsername)
+                if(breaker == 0)
                 {
-                    if (this.PasswordBox.Password == item.CorrectPassword)
+                    if (loginUserName == item.CorrectUsername)
                     {
-                        ClimbLadder();
+                        if (this.PasswordBox.Password == item.CorrectPassword)
+                        {
+                            studentKey = item.StudentKey;
+                            breaker += 1;
+                            fault = false;
+                            ClimbLadder();
+                        }
+                        else
+                        {
+                            fault = true;
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Login credentials incorrect retard");
+                        fault = true;
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Login credentials incorrect retard");
-                }
             }
+            if (fault)
+                MessageBox.Show("Login credentials incorrect retard");
         }
 
         private void EnterKeyPasswordBox(object sender, KeyEventArgs e)
@@ -65,12 +78,20 @@ namespace TmsFrontend
             }
         }
 
-        public void createDummyStudent()
+        public void createDummyStudents()
         {
             logins.Add(new StudentLogin()
             {
+                StudentKey = 1,
                 CorrectUsername = "Moox",
                 CorrectPassword = "Angoose"
+            });
+
+            logins.Add(new StudentLogin()
+            {
+                StudentKey = 2,
+                CorrectUsername = "Samuel",
+                CorrectPassword = "Thomas"
             });
         }
 
@@ -82,6 +103,7 @@ namespace TmsFrontend
 
     public class StudentLogin
     {
+        public int StudentKey { get; set; }
         public string CorrectUsername { get; set; }
         public string CorrectPassword { get; set; }
     }

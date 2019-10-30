@@ -19,9 +19,8 @@ namespace TmsFrontend
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
-        StudentTestsMain testsPage = new StudentTestsMain();
-        StudentResultsMain resultsPage = new StudentResultsMain();
+    {        
+        public int studentId;
 
         public MainWindow()
         {
@@ -38,18 +37,22 @@ namespace TmsFrontend
             loginPage.ladder += (object sender, EventArgs e) =>
             {
                 Content = contentCopy;
+                studentId = loginPage.studentKey;
             };
-            Main.Content = testsPage;
+
+            //Main.Content = new StudentTestsMain(studentId); breaks it for some reason
         }
 
         private void ButtonClickTest(object sender, RoutedEventArgs e)
         {
+            var testsPage = new StudentTestsMain(studentId);
             Main.Content = testsPage;
             ChangeButtonColour(sender);
         }
 
         private void ButtonClickResult(object sender, RoutedEventArgs e)
         {
+            var resultsPage = new StudentResultsMain(studentId);
             Main.Content = resultsPage;
             ChangeButtonColour(sender);
         }
@@ -72,6 +75,11 @@ namespace TmsFrontend
 
         private void Logout(object sender, RoutedEventArgs e)
         {
+            Main.Content = null;
+
+            ResultButton.Foreground = Brushes.White;
+            TestButton.Foreground = Brushes.White;
+
             LoginPage();
         }
 
