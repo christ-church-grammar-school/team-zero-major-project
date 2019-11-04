@@ -107,35 +107,43 @@ namespace TmsFrontend
 
                     ScoreBox.Text = "Score: ";
                     ScoreBox.FontWeight = FontWeights.Bold;
-                    ScoreBox.Inlines.Add(new Run(item.Score) { FontWeight = FontWeights.Normal });
+                    ScoreBox.Inlines.Add(new Run(item.Score)
+                        { FontWeight = FontWeights.Normal });
 
                     PercentageBox.Text = "Percentage: ";
                     PercentageBox.FontWeight = FontWeights.Bold;
-                    PercentageBox.Inlines.Add(new Run(item.Percentage) { FontWeight = FontWeights.Normal });
+                    PercentageBox.Inlines.Add(new Run(item.Percentage)
+                        { FontWeight = FontWeights.Normal });
 
                     GradeBox.Text = "Grade: ";
                     GradeBox.FontWeight = FontWeights.Bold;
-                    GradeBox.Inlines.Add(new Run(item.Grade) { FontWeight = FontWeights.Normal });
+                    GradeBox.Inlines.Add(new Run(item.Grade)
+                        { FontWeight = FontWeights.Normal });
 
                     AverageBox.Text = "Class Average: ";
                     AverageBox.FontWeight = FontWeights.Bold;
-                    AverageBox.Inlines.Add(new Run(item.Average) { FontWeight = FontWeights.Normal });
+                    AverageBox.Inlines.Add(new Run(item.Average)
+                        { FontWeight = FontWeights.Normal });
 
                     QuestionsBox.Text = "Questions: ";
                     QuestionsBox.FontWeight = FontWeights.Bold;
-                    QuestionsBox.Inlines.Add(new Run(item.Questions) { FontWeight = FontWeights.Normal });
+                    QuestionsBox.Inlines.Add(new Run(item.Questions)
+                        { FontWeight = FontWeights.Normal });
 
                     TimeLimitBox.Text = "Time Limit: ";
                     TimeLimitBox.FontWeight = FontWeights.Bold;
-                    TimeLimitBox.Inlines.Add(new Run(item.TimeLimit) { FontWeight = FontWeights.Normal });
+                    TimeLimitBox.Inlines.Add(new Run(item.TimeLimit)
+                        { FontWeight = FontWeights.Normal });
 
                     SetByBox.Text = "Set By: ";
                     SetByBox.FontWeight = FontWeights.Bold;
-                    SetByBox.Inlines.Add(new Run(item.SetBy) { FontWeight = FontWeights.Normal });
+                    SetByBox.Inlines.Add(new Run(item.SetBy)
+                        { FontWeight = FontWeights.Normal });
 
                     TopicBox.Text = "Topic: ";
                     TopicBox.FontWeight = FontWeights.Bold;
-                    TopicBox.Inlines.Add(new Run(item.Topic) { FontWeight = FontWeights.Normal });
+                    TopicBox.Inlines.Add(new Run(item.Topic)
+                        { FontWeight = FontWeights.Normal });
                 }
             }
         }
