@@ -65,6 +65,11 @@
                 <Button.Foreground>
                     <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
                 </Button.Foreground>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10" />
+                    </Style>
+                </Button.Resources>
             </Button>
         </Grid>
     </Grid>

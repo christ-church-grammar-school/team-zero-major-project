@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Google.Cloud.Firestore;
 
 namespace TmsFrontend
 {
@@ -39,12 +40,16 @@ namespace TmsFrontend
 
         private void Login(object sender, RoutedEventArgs e)
         {
+            //FirestoreDb db = FirestoreDb.Create("react-tms" );
+            //CollectionReference classesFromDb = db.Collection("classes");
+            //Google.Cloud.Firestore.DocumentReference classFromClasses = classesFromDb.Document("10ASD1_2019");
+
             int breaker = 0;
             bool fault = false;
 
-            foreach(var item in logins)
+            foreach (var item in logins)
             {
-                if(breaker == 0)
+                if (breaker == 0)
                 {
                     if (loginUserName == item.CorrectUsername)
                     {
@@ -70,7 +75,7 @@ namespace TmsFrontend
                 MessageBox.Show("Login credentials incorrect retard");
         }
 
-        private void EnterKeyPasswordBox(object sender, KeyEventArgs e)
+            private void EnterKeyPasswordBox(object sender, KeyEventArgs e)
         {
             if(e.Key == Key.Return)
             {

@@ -21,6 +21,7 @@ namespace TmsFrontend
     public partial class StudentTestsMain : Page
     {
         List<TestPreview> TestPreviews = new List<TestPreview> { };
+        List<TestPreview> TestsDisplayed = new List<TestPreview> { };
         private int StudentKey;
 
         public StudentTestsMain(int studentId)
@@ -28,42 +29,55 @@ namespace TmsFrontend
             InitializeComponent();
             StudentKey = studentId;
 
-            setNames();
+            setButtons();
             setTests();
 
-            changeTextBlocks(TestPreviews[0].Title as string);
+            changeTextBlocks(TestsDisplayed[0].Title as string);
         }
 
         public void setTests()
         {
-            if(StudentKey == 2)
+            
+            TestPreviews.Add(new TestPreview()
             {
-                TestPreviews.Add(new TestPreview()
-                {
-                    Questions = "5",
-                    TimeLimit = "50 Minutes",
-                    SetBy = "Graham Nolan",
-                    Topic = "C#",
-                    Title = "C# Practical Programming Test"
-                });
-            }
+                Questions = "5",
+                TimeLimit = "50 Minutes",
+                SetBy = "Graham Nolan",
+                Topic = "C#",
+                Title = "C# Practical Programming Test",
+                Assigned = new int[1] { 2 }
+            });
 
-            if(StudentKey == 1)
+            TestPreviews.Add(new TestPreview()
             {
-                TestPreviews.Add(new TestPreview()
+                Questions = "5",
+                TimeLimit = "50 Minutes",
+                SetBy = "Graham Nolan",
+                Topic = "WPF",
+                Title = "WPF Test",
+                Assigned = new int[1] { 1 }
+            });
+
+            assignResults();
+        }
+
+        public void assignResults()
+        {
+            foreach (var item in TestPreviews)
+            {
+                foreach (var num in item.Assigned)
                 {
-                    Questions = "5",
-                    TimeLimit = "50 Minutes",
-                    SetBy = "Graham Nolan",
-                    Topic = "WPF",
-                    Title = "WPF Test"
-                });
+                    if (num == StudentKey)
+                    {
+                        TestsDisplayed.Add(item);
+                    }
+                }
             }
         }
 
-        public void setNames()
+        public void setButtons()
         {
-            ResultsList.ItemsSource = TestPreviews;
+            ResultsList.ItemsSource = TestsDisplayed;
         }
 
         private void BeginButton_Click(object sender, RoutedEventArgs e)
@@ -117,13 +131,10 @@ namespace TmsFrontend
     public class TestPreview
     {
         public string Title { get; set; }
-        public string Score { get; set; }
-        public string Percentage { get; set; }
-        public string Grade { get; set; }
-        public string Average { get; set; }
         public string Questions { get; set; }
         public string TimeLimit { get; set; }
         public string SetBy { get; set; }
         public string Topic { get; set; }
+        public int[] Assigned { get; set; }
     }
 }
