@@ -20,45 +20,64 @@ namespace TmsFrontend
     /// </summary>
     public partial class StudentTestsMain : Page
     {
-        List<TestPreview> TestPreview = new List<TestPreview> { };
+        List<TestPreview> TestPreviews = new List<TestPreview> { };
+        List<TestPreview> TestsDisplayed = new List<TestPreview> { };
+        private int StudentKey;
 
-        public StudentTestsMain()
+        public StudentTestsMain(int studentId)
         {
             InitializeComponent();
-            setNames();
+            StudentKey = studentId;
+
+            setButtons();
             setTests();
 
-            changeTextBlocks(TestPreview[0].Title as string);
+            changeTextBlocks(TestsDisplayed[0].Title as string);
         }
 
         public void setTests()
         {
-            TestPreview.Add(new TestPreview()
+            
+            TestPreviews.Add(new TestPreview()
             {
                 Questions = "5",
                 TimeLimit = "50 Minutes",
                 SetBy = "Graham Nolan",
                 Topic = "C#",
-                Title = "C# Practical Programming Test"
+                Title = "C# Practical Programming Test",
+                Assigned = new int[1] { 2 }
             });
 
-            TestPreview.Add(new TestPreview()
+            TestPreviews.Add(new TestPreview()
             {
                 Questions = "5",
                 TimeLimit = "50 Minutes",
                 SetBy = "Graham Nolan",
                 Topic = "WPF",
-                Title = "WPF Test"
+                Title = "WPF Test",
+                Assigned = new int[1] { 1 }
             });
+
+            assignResults();
         }
 
-        public void setNames()
+        public void assignResults()
         {
-            List<TestItem> items = new List<TestItem>();
-            items.Add(new TestItem() { TestName = "C# Practical Programming Test" });
-            items.Add(new TestItem() { TestName = "WPF Test" });
+            foreach (var item in TestPreviews)
+            {
+                foreach (var num in item.Assigned)
+                {
+                    if (num == StudentKey)
+                    {
+                        TestsDisplayed.Add(item);
+                    }
+                }
+            }
+        }
 
-            ResultsList.ItemsSource = items;
+        public void setButtons()
+        {
+            ResultsList.ItemsSource = TestsDisplayed;
         }
 
         private void BeginButton_Click(object sender, RoutedEventArgs e)
@@ -76,7 +95,7 @@ namespace TmsFrontend
 
         private void changeTextBlocks(string selectedTest)
         {
-            foreach (var item in TestPreview)
+            foreach (var item in TestPreviews)
             {
                 if (item.Title == selectedTest)
                 {
@@ -109,21 +128,13 @@ namespace TmsFrontend
         }
     }
 
-    public class TestItem
-    {
-        public string TestName { get; set; }
-    }
-
     public class TestPreview
     {
         public string Title { get; set; }
-        public string Score { get; set; }
-        public string Percentage { get; set; }
-        public string Grade { get; set; }
-        public string Average { get; set; }
         public string Questions { get; set; }
         public string TimeLimit { get; set; }
         public string SetBy { get; set; }
         public string Topic { get; set; }
+        public int[] Assigned { get; set; }
     }
 }

@@ -21,18 +21,23 @@ namespace TmsFrontend
     public partial class StudentResultsMain : Page
     {
         List<TestInfo> TestInfos = new List<TestInfo> { };
+        List<TestInfo> TestsDisplayed= new List<TestInfo> { };
+        private int StudentKey;
 
-        public StudentResultsMain()
+        public StudentResultsMain(int studentId)
         {
             InitializeComponent();
-            setNames();
+            StudentKey = studentId;
+
+            setButtons();
             setTests();
 
-            changeTextBlocks(TestInfos[0].Title as string);
+            changeTextBlocks(TestsDisplayed[0].Title as string);
         }
 
         public void setTests()
         {
+            
             TestInfos.Add(new TestInfo()
             {
                 Score = "21/25",
@@ -43,8 +48,10 @@ namespace TmsFrontend
                 TimeLimit = "50 Minutes",
                 SetBy = "Graham Nolan",
                 Topic = "C#",
-                Title = "C# Practical Programming Test"
+                Title = "C# Practical Programming Test",
+                Assigned = new int[1] { 1 }
             });
+
 
             TestInfos.Add(new TestInfo()
             {
@@ -56,17 +63,30 @@ namespace TmsFrontend
                 TimeLimit = "50 Minutes",
                 SetBy = "Graham Nolan",
                 Topic = "WPF",
-                Title = "WPF Test"
+                Title = "WPF Test",
+                Assigned = new int[1]{ 2 }
             });
+
+            assignTests();
         }
 
-        public void setNames()
+        public void assignTests()
         {
-            List<ResultItem> items = new List<ResultItem>();
-            items.Add(new ResultItem() { ResultName = "C# Practical Programming Test" });
-            items.Add(new ResultItem() { ResultName = "WPF Test" });
+            foreach(var item in TestInfos)
+            {
+                foreach(var num in item.Assigned)
+                {
+                    if(num == StudentKey)
+                    {
+                        TestsDisplayed.Add(item);
+                    }
+                }
+            }
+        }
 
-            ResultsList.ItemsSource = items;
+        public void setButtons()
+        {
+            ResultsList.ItemsSource = TestsDisplayed;
         }
 
         private void ChangeTest(object sender, RoutedEventArgs e)
@@ -81,7 +101,7 @@ namespace TmsFrontend
             foreach (var item in TestInfos)
             {
                 if(item.Title == selectedTest)
-                {                    
+                {
                     TitleBox.Text = item.Title;
                     TitleBox.FontWeight = FontWeights.ExtraBold;
 
@@ -127,11 +147,6 @@ namespace TmsFrontend
         }
     }
 
-    public class ResultItem
-    {
-        public string ResultName { get; set; }
-    }
-    
     public class TestInfo
     {
         public string Title { get; set; }
@@ -143,5 +158,6 @@ namespace TmsFrontend
         public string TimeLimit { get; set; }
         public string SetBy { get; set; }
         public string Topic { get; set; }
+        public int[] Assigned { get; set; }
     }
 }

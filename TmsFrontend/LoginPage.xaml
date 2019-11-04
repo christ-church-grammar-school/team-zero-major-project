@@ -41,11 +41,11 @@
             </Grid.RowDefinitions>
             <TextBox x:Name="UsernameBox" Grid.Column="1" Margin="20,50,20,60" Grid.Row="1"
                      TextWrapping="Wrap" Background="#FFE2E2E2" 
-                     BorderBrush="{x:Null}" FontSize="24"
+                     BorderBrush="{x:Null}" FontSize="30"
                      Text="{Binding loginUserName}"/> 
             <PasswordBox x:Name="PasswordBox" Grid.Column="1" Margin="20,50,20,60"
                          Grid.Row="2" BorderBrush="{x:Null}"
-                         Background="#FFE2E2E2" FontSize="24" KeyDown="EnterKeyPasswordBox"/>
+                         Background="#FFE2E2E2" FontSize="30" KeyDown="EnterKeyPasswordBox"/>
             <TextBlock Grid.Column="1" HorizontalAlignment="Left"
                        Margin="20,10.5,0,0" Grid.Row="1" TextWrapping="Wrap"
                        Text="User Name:" VerticalAlignment="Top" FontSize="24">
@@ -65,6 +65,11 @@
                 <Button.Foreground>
                     <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
                 </Button.Foreground>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10" />
+                    </Style>
+                </Button.Resources>
             </Button>
         </Grid>
     </Grid>
