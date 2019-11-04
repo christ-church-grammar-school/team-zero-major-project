@@ -41,20 +41,24 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBlock x:Name="QuestionsBox" Grid.Column="1" Margin="100,0" TextWrapping="Wrap"
-                   VerticalAlignment="Center" Grid.Row="1" FontSize="24" Grid.ColumnSpan="2">
+        <TextBlock x:Name="QuestionsBox" Grid.Column="1" Margin="100,0" 
+                   TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1"
+                   FontSize="24" Grid.ColumnSpan="2">
                    <Run FontWeight="Bold" Text="Questions:"/>
         </TextBlock>
-        <TextBlock x:Name="TimeLimitBox" Grid.Column="1" Margin="100,0" TextWrapping="Wrap"
-                   VerticalAlignment="Center" Grid.Row="2" FontSize="24" Grid.ColumnSpan="2">
+        <TextBlock x:Name="TimeLimitBox" Grid.Column="1" Margin="100,0"
+                   TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2"
+                   FontSize="24" Grid.ColumnSpan="2">
                    <Run FontWeight="Bold" Text="Time Limit: "/>
         </TextBlock>
-        <TextBlock x:Name="SetByBox" Grid.Column="1" Margin="100,0" TextWrapping="Wrap"
-                   VerticalAlignment="Center" Grid.Row="3" FontSize="24" Grid.ColumnSpan="2">
+        <TextBlock x:Name="SetByBox" Grid.Column="1" Margin="100,0"
+                   TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3"
+                   FontSize="24" Grid.ColumnSpan="2">
                    <Run FontWeight="Bold" Text="Set By: "/>
         </TextBlock>
-        <TextBlock x:Name="TopicBox" Grid.Column="1" Margin="100,0" TextWrapping="Wrap"
-                   VerticalAlignment="Center" Grid.Row="4" FontSize="24" Grid.ColumnSpan="2">
+        <TextBlock x:Name="TopicBox" Grid.Column="1" Margin="100,0"
+                   TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="4"
+                   FontSize="24" Grid.ColumnSpan="2">
                    <Run FontWeight="Bold" Text="Topic: "/>
         </TextBlock>
         <TextBlock x:Name="TitleBox" Grid.ColumnSpan="2" Grid.Column="1" 
@@ -62,7 +66,8 @@
                    VerticalAlignment="Center" FontSize="40"
                    Text="[Title]"/>
         <Button x:Name="TestsNewWindowButton" Content="Begin Test"
-                Grid.Column="3" Margin="40" Grid.Row="4" FontSize="24" Click="TestInDepth">
+                Grid.Column="3" Margin="40" Grid.Row="4" FontSize="24"
+                Click="TestInDepth">
             <Button.Foreground>
                 <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
             </Button.Foreground>
