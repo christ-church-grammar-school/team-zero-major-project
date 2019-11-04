@@ -104,19 +104,23 @@ namespace TmsFrontend
 
                     QuestionsBox.Text = "Questions: ";
                     QuestionsBox.FontWeight = FontWeights.Bold;
-                    QuestionsBox.Inlines.Add(new Run(item.Questions) { FontWeight = FontWeights.Normal });
+                    QuestionsBox.Inlines.Add(new Run(item.Questions)
+                        { FontWeight = FontWeights.Normal });
 
                     TimeLimitBox.Text = "Time Limit: ";
                     TimeLimitBox.FontWeight = FontWeights.Bold;
-                    TimeLimitBox.Inlines.Add(new Run(item.TimeLimit) { FontWeight = FontWeights.Normal });
+                    TimeLimitBox.Inlines.Add(new Run(item.TimeLimit)
+                        { FontWeight = FontWeights.Normal });
 
                     SetByBox.Text = "Set By: ";
                     SetByBox.FontWeight = FontWeights.Bold;
-                    SetByBox.Inlines.Add(new Run(item.SetBy) { FontWeight = FontWeights.Normal });
+                    SetByBox.Inlines.Add(new Run(item.SetBy)
+                        { FontWeight = FontWeights.Normal });
 
                     TopicBox.Text = "Topic: ";
                     TopicBox.FontWeight = FontWeights.Bold;
-                    TopicBox.Inlines.Add(new Run(item.Topic) { FontWeight = FontWeights.Normal });
+                    TopicBox.Inlines.Add(new Run(item.Topic)
+                        { FontWeight = FontWeights.Normal });
                 }
             }
         }
