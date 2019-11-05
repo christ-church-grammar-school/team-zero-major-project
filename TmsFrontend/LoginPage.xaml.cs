@@ -72,7 +72,7 @@ namespace TmsFrontend
                 }
             }
             if (fault)
-                MessageBox.Show("Login credentials incorrect retard");
+                MessageBox.Show("Login credentials incorrect");
         }
 
             private void EnterKeyPasswordBox(object sender, KeyEventArgs e)

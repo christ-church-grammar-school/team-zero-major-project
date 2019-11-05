@@ -35,6 +35,9 @@ namespace TmsFrontend
             changeTextBlocks(TestsDisplayed[0].Title as string);
         }
 
+        //This funtion decalares and adds new objects of type "TestPreview" to
+        //the list "TestPreviews"
+
         public void setTests()
         {
             
@@ -61,6 +64,11 @@ namespace TmsFrontend
             assignResults();
         }
 
+        //This function adds objects of type "TestPreview" to the list
+        //"TestsDisplayed" if they have been assigned to the student that has 
+        //logged in by comparing the int "StudentKey" to the array of ints
+        //"assigned", a part of the TestInfo object
+
         public void assignResults()
         {
             foreach (var item in TestPreviews)
@@ -75,16 +83,18 @@ namespace TmsFrontend
             }
         }
 
+        //This function creates and sets the names of the buttons on the side
+        //of the page which allows the user to select different tests
+
         public void setButtons()
         {
             ResultsList.ItemsSource = TestsDisplayed;
         }
 
-        private void BeginButton_Click(object sender, RoutedEventArgs e)
-        {
-            Window win2 = new Window();
-            win2.Show();
-        }
+
+        //This function changes the textblocks displayes on the screen to
+        //correspond to the selected test
+        //It is the button click function of buttons in the listbox
 
         private void ChangeTest(object sender, RoutedEventArgs e)
         {
@@ -92,6 +102,9 @@ namespace TmsFrontend
 
             changeTextBlocks(buttonHolder.Content as string);
         }
+
+        //This function changes the text of the textblocks in accordance to a
+        //string that it is given which
 
         private void changeTextBlocks(string selectedTest)
         {
@@ -105,25 +118,37 @@ namespace TmsFrontend
                     QuestionsBox.Text = "Questions: ";
                     QuestionsBox.FontWeight = FontWeights.Bold;
                     QuestionsBox.Inlines.Add(new Run(item.Questions)
-                        { FontWeight = FontWeights.Normal });
+                    {
+                        FontWeight = FontWeights.Normal
+                    });
 
                     TimeLimitBox.Text = "Time Limit: ";
                     TimeLimitBox.FontWeight = FontWeights.Bold;
                     TimeLimitBox.Inlines.Add(new Run(item.TimeLimit)
-                        { FontWeight = FontWeights.Normal });
+                    {
+                        FontWeight = FontWeights.Normal
+                    });
 
                     SetByBox.Text = "Set By: ";
                     SetByBox.FontWeight = FontWeights.Bold;
                     SetByBox.Inlines.Add(new Run(item.SetBy)
-                        { FontWeight = FontWeights.Normal });
+                    {
+                        FontWeight = FontWeights.Normal
+                    });
 
                     TopicBox.Text = "Topic: ";
                     TopicBox.FontWeight = FontWeights.Bold;
                     TopicBox.Inlines.Add(new Run(item.Topic)
-                        { FontWeight = FontWeights.Normal });
+                    {
+                        FontWeight = FontWeights.Normal
+                    });
                 }
             }
         }
+
+        //This function is the click function of the "TestsNewWindowButton"
+        //it opens a new window
+        //CHANGE
 
         private void TestInDepth(object sender, RoutedEventArgs e)
         {

@@ -35,6 +35,9 @@ namespace TmsFrontend
             changeTextBlocks(TestsDisplayed[0].Title as string);
         }
 
+        //This funtion decalares and adds new objects of type "TestInfo" to
+        //the list "TestInfos"
+
         public void setTests()
         {
             
@@ -70,6 +73,11 @@ namespace TmsFrontend
             assignTests();
         }
 
+        //This function adds objects of type "TestInfo" to the list
+        //"TestsDisplayed" if they have been assigned to the student that has 
+        //logged in by comparing the int "StudentKey" to the array of ints
+        //"assigned", a part of the TestInfo object
+
         public void assignTests()
         {
             foreach(var item in TestInfos)
@@ -84,10 +92,17 @@ namespace TmsFrontend
             }
         }
 
+        //This function creates and sets the names of the buttons on the side
+        //of the page which allows the user to select different tests
+
         public void setButtons()
         {
             ResultsList.ItemsSource = TestsDisplayed;
         }
+
+        //This function changes the textblocks displayes on the screen to
+        //correspond to the selected test
+        //It is the button click function of buttons in the listbox
 
         private void ChangeTest(object sender, RoutedEventArgs e)
         {
@@ -96,9 +111,12 @@ namespace TmsFrontend
             changeTextBlocks(buttonHolder.Content as string);
         }
 
+        //This function changes the text of the textblocks in accordance to a
+        //string that it is given which
+
         private void changeTextBlocks(string selectedTest)
         {
-            foreach (var item in TestInfos)
+            foreach (var item in TestsDisplayed)
             {
                 if(item.Title == selectedTest)
                 {
@@ -108,45 +126,65 @@ namespace TmsFrontend
                     ScoreBox.Text = "Score: ";
                     ScoreBox.FontWeight = FontWeights.Bold;
                     ScoreBox.Inlines.Add(new Run(item.Score)
-                        { FontWeight = FontWeights.Normal });
+                    {
+                        FontWeight = FontWeights.Normal
+                    });
 
                     PercentageBox.Text = "Percentage: ";
                     PercentageBox.FontWeight = FontWeights.Bold;
                     PercentageBox.Inlines.Add(new Run(item.Percentage)
-                        { FontWeight = FontWeights.Normal });
+                    {
+                        FontWeight = FontWeights.Normal
+                    });
 
                     GradeBox.Text = "Grade: ";
                     GradeBox.FontWeight = FontWeights.Bold;
                     GradeBox.Inlines.Add(new Run(item.Grade)
-                        { FontWeight = FontWeights.Normal });
+                    {
+                        FontWeight = FontWeights.Normal
+                    });
 
                     AverageBox.Text = "Class Average: ";
                     AverageBox.FontWeight = FontWeights.Bold;
                     AverageBox.Inlines.Add(new Run(item.Average)
-                        { FontWeight = FontWeights.Normal });
+                    {
+                        FontWeight = FontWeights.Normal
+                    });
 
                     QuestionsBox.Text = "Questions: ";
                     QuestionsBox.FontWeight = FontWeights.Bold;
                     QuestionsBox.Inlines.Add(new Run(item.Questions)
-                        { FontWeight = FontWeights.Normal });
+                    {
+                        FontWeight = FontWeights.Normal
+                    });
 
                     TimeLimitBox.Text = "Time Limit: ";
                     TimeLimitBox.FontWeight = FontWeights.Bold;
                     TimeLimitBox.Inlines.Add(new Run(item.TimeLimit)
-                        { FontWeight = FontWeights.Normal });
+                    {
+                        FontWeight = FontWeights.Normal
+                    });
 
                     SetByBox.Text = "Set By: ";
                     SetByBox.FontWeight = FontWeights.Bold;
                     SetByBox.Inlines.Add(new Run(item.SetBy)
-                        { FontWeight = FontWeights.Normal });
+                    {
+                        FontWeight = FontWeights.Normal
+                    });
 
                     TopicBox.Text = "Topic: ";
                     TopicBox.FontWeight = FontWeights.Bold;
                     TopicBox.Inlines.Add(new Run(item.Topic)
-                        { FontWeight = FontWeights.Normal });
+                    {
+                        FontWeight = FontWeights.Normal
+                    });
                 }
             }
         }
+
+        //This function is the click function of the "ResultsNewWindowButton"
+        //it opens a new window
+        //CHANGE
 
         private void ResultsInDepth(object sender, RoutedEventArgs e)
         {
@@ -154,6 +192,8 @@ namespace TmsFrontend
             insideResult.Show();
         }
     }
+
+    //A class that stores all the information of a test
 
     public class TestInfo
     {
