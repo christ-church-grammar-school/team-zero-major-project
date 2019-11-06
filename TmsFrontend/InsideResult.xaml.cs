@@ -116,7 +116,7 @@ namespace TmsFrontend
 
         private void changeTextBlocks(string selectedTest)
         {
-            foreach (var item in ResultQuestions)
+            foreach (var item in ShownResultQuestions)
             {
                 if (item.Title == selectedTest)
                 {
@@ -125,7 +125,8 @@ namespace TmsFrontend
                
                     MarkBox.Text = "Mark: ";
                     MarkBox.FontWeight = FontWeights.Bold;
-                    MarkBox.Inlines.Add(new Run($"{item.Mark.ToString()}/{item.OutOf.ToString()}")
+                    MarkBox.Inlines.Add(new Run($"{item.Mark.ToString()}/" +
+                                        $"{item.OutOf.ToString()}")
                     {
                         FontWeight = FontWeights.Normal
                     });
