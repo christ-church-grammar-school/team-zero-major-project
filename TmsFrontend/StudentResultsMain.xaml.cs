@@ -24,13 +24,15 @@ namespace TmsFrontend
         List<TestInfo> TestsDisplayed= new List<TestInfo> { };
         private int StudentKey;
 
+        public string testShown;
+
         public StudentResultsMain(int studentId)
         {
             InitializeComponent();
             StudentKey = studentId;
 
-            setButtons();
             setTests();
+            setButtons();
 
             changeTextBlocks(TestsDisplayed[0].Title as string);
         }
@@ -67,7 +69,7 @@ namespace TmsFrontend
                 SetBy = "Graham Nolan",
                 Topic = "WPF",
                 Title = "WPF Test",
-                Assigned = new int[1]{ 2 }
+                Assigned = new int[2]{ 1, 2 }
             });
 
             assignTests();
@@ -116,6 +118,8 @@ namespace TmsFrontend
 
         private void changeTextBlocks(string selectedTest)
         {
+            testShown = selectedTest;
+
             foreach (var item in TestsDisplayed)
             {
                 if(item.Title == selectedTest)
@@ -188,7 +192,7 @@ namespace TmsFrontend
 
         private void ResultsInDepth(object sender, RoutedEventArgs e)
         {
-            InsideResult insideResult = new InsideResult();
+            InsideResult insideResult = new InsideResult(testShown);
             insideResult.Show();
         }
     }

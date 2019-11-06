@@ -21,12 +21,50 @@
             <RowDefinition Height="20*"/>
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
-        <ListBox Name="ResultsList" HorizontalContentAlignment="Stretch"
+        <ListBox Name="QuestionsList" HorizontalContentAlignment="Stretch"
                  Foreground="{x:Null}" BorderThickness="0"
                  BorderBrush="{x:Null}" Grid.RowSpan="5">
             <ListBox.Background>
                 <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
             </ListBox.Background>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding Title}" Click="ChangeTest"
+                            Height="100" FontSize="18" BorderBrush="{x:Null}"
+                            Foreground="White" Margin="0,0,0,0">
+                        <Button.Background>
+                            <SolidColorBrush
+                                Color="{DynamicResource Blue(Saphire)}"/>
+                        </Button.Background>
+                    </Button>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
+        <TextBlock x:Name="MarkBox" Grid.Column="1" Margin="100,0" 
+                   TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2"
+                   FontSize="24" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                   <Run FontWeight="Bold" Text="Mark: "/></TextBlock>
+        <TextBlock x:Name="StatementBox" Grid.Column="1" Margin="100,0"
+                   TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1"
+                   FontSize="24" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                   <Run FontWeight="Bold" Text="Question Statement: "/>
+        </TextBlock>
+        <TextBlock x:Name="TitleBox" Grid.ColumnSpan="2" Grid.Column="1" 
+                   Margin="0" TextWrapping="Wrap" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" FontSize="40"
+                   Text="[Title]" FontWeight="Bold"/>
+        <Button x:Name="SubmissionFileButton" Content="View Submission"
+                Grid.Column="3" Margin="40" Grid.Row="4" FontSize="24"
+                Click="SubmissionFileButton_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Blue(Saphire)}"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <SolidColorBrush Color="White"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>
