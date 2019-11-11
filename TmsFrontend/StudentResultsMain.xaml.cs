@@ -34,7 +34,14 @@ namespace TmsFrontend
             setTests();
             setButtons();
 
-            changeTextBlocks(TestsDisplayed[0].Title as string);
+            if (TestsDisplayed.Count != 0)
+            {
+                changeTextBlocks(TestsDisplayed[0].Title as string);
+            }
+            else
+            {
+                changeTextBlocks("No Results Available");
+            }
         }
 
         //This funtion decalares and adds new objects of type "TestInfo" to
@@ -120,68 +127,94 @@ namespace TmsFrontend
         {
             testShown = selectedTest;
 
-            foreach (var item in TestsDisplayed)
+            if(testShown == "No Results Available")
             {
-                if(item.Title == selectedTest)
+                TitleBox.Text = selectedTest;
+                TitleBox.FontWeight = FontWeights.ExtraBold;
+
+                ScoreBox.Text = null;
+                
+                PercentageBox.Text = null;
+
+                GradeBox.Text = null;
+               
+                AverageBox.Text = null;
+               
+
+                QuestionsBox.Text = null;
+
+                TimeLimitBox.Text = null;
+
+                SetByBox.Text = null;
+
+                TopicBox.Text = null;
+            }
+
+            else
+            {
+                foreach (var item in TestsDisplayed)
                 {
-                    TitleBox.Text = item.Title;
-                    TitleBox.FontWeight = FontWeights.ExtraBold;
-
-                    ScoreBox.Text = "Score: ";
-                    ScoreBox.FontWeight = FontWeights.Bold;
-                    ScoreBox.Inlines.Add(new Run(item.Score)
+                    if (item.Title == selectedTest)
                     {
-                        FontWeight = FontWeights.Normal
-                    });
+                        TitleBox.Text = item.Title;
+                        TitleBox.FontWeight = FontWeights.ExtraBold;
 
-                    PercentageBox.Text = "Percentage: ";
-                    PercentageBox.FontWeight = FontWeights.Bold;
-                    PercentageBox.Inlines.Add(new Run(item.Percentage)
-                    {
-                        FontWeight = FontWeights.Normal
-                    });
+                        ScoreBox.Text = "Score: ";
+                        ScoreBox.FontWeight = FontWeights.Bold;
+                        ScoreBox.Inlines.Add(new Run(item.Score)
+                        {
+                            FontWeight = FontWeights.Normal
+                        });
 
-                    GradeBox.Text = "Grade: ";
-                    GradeBox.FontWeight = FontWeights.Bold;
-                    GradeBox.Inlines.Add(new Run(item.Grade)
-                    {
-                        FontWeight = FontWeights.Normal
-                    });
+                        PercentageBox.Text = "Percentage: ";
+                        PercentageBox.FontWeight = FontWeights.Bold;
+                        PercentageBox.Inlines.Add(new Run(item.Percentage)
+                        {
+                            FontWeight = FontWeights.Normal
+                        });
 
-                    AverageBox.Text = "Class Average: ";
-                    AverageBox.FontWeight = FontWeights.Bold;
-                    AverageBox.Inlines.Add(new Run(item.Average)
-                    {
-                        FontWeight = FontWeights.Normal
-                    });
+                        GradeBox.Text = "Grade: ";
+                        GradeBox.FontWeight = FontWeights.Bold;
+                        GradeBox.Inlines.Add(new Run(item.Grade)
+                        {
+                            FontWeight = FontWeights.Normal
+                        });
 
-                    QuestionsBox.Text = "Questions: ";
-                    QuestionsBox.FontWeight = FontWeights.Bold;
-                    QuestionsBox.Inlines.Add(new Run(item.Questions)
-                    {
-                        FontWeight = FontWeights.Normal
-                    });
+                        AverageBox.Text = "Class Average: ";
+                        AverageBox.FontWeight = FontWeights.Bold;
+                        AverageBox.Inlines.Add(new Run(item.Average)
+                        {
+                            FontWeight = FontWeights.Normal
+                        });
 
-                    TimeLimitBox.Text = "Time Limit: ";
-                    TimeLimitBox.FontWeight = FontWeights.Bold;
-                    TimeLimitBox.Inlines.Add(new Run(item.TimeLimit)
-                    {
-                        FontWeight = FontWeights.Normal
-                    });
+                        QuestionsBox.Text = "Questions: ";
+                        QuestionsBox.FontWeight = FontWeights.Bold;
+                        QuestionsBox.Inlines.Add(new Run(item.Questions)
+                        {
+                            FontWeight = FontWeights.Normal
+                        });
 
-                    SetByBox.Text = "Set By: ";
-                    SetByBox.FontWeight = FontWeights.Bold;
-                    SetByBox.Inlines.Add(new Run(item.SetBy)
-                    {
-                        FontWeight = FontWeights.Normal
-                    });
+                        TimeLimitBox.Text = "Time Limit: ";
+                        TimeLimitBox.FontWeight = FontWeights.Bold;
+                        TimeLimitBox.Inlines.Add(new Run(item.TimeLimit)
+                        {
+                            FontWeight = FontWeights.Normal
+                        });
 
-                    TopicBox.Text = "Topic: ";
-                    TopicBox.FontWeight = FontWeights.Bold;
-                    TopicBox.Inlines.Add(new Run(item.Topic)
-                    {
-                        FontWeight = FontWeights.Normal
-                    });
+                        SetByBox.Text = "Set By: ";
+                        SetByBox.FontWeight = FontWeights.Bold;
+                        SetByBox.Inlines.Add(new Run(item.SetBy)
+                        {
+                            FontWeight = FontWeights.Normal
+                        });
+
+                        TopicBox.Text = "Topic: ";
+                        TopicBox.FontWeight = FontWeights.Bold;
+                        TopicBox.Inlines.Add(new Run(item.Topic)
+                        {
+                            FontWeight = FontWeights.Normal
+                        });
+                    }
                 }
             }
         }

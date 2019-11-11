@@ -38,7 +38,7 @@ namespace TmsFrontend
             }
             else
             {
-                //set all to "No Test"
+                changeTextBlocks("No Tests Available");
             }
         }
 
@@ -115,40 +115,57 @@ namespace TmsFrontend
 
         private void changeTextBlocks(string selectedTest)
         {
-            foreach (var item in TestPreviews)
+            if (selectedTest == "No Tests Available")
             {
-                if (item.Title == selectedTest)
+                TitleBox.Text = selectedTest;
+                TitleBox.FontWeight = FontWeights.ExtraBold;
+
+                QuestionsBox.Text = null;
+
+                TimeLimitBox.Text = null;
+
+                SetByBox.Text = null;
+
+                TopicBox.Text = null;
+            }
+
+            else
+            {
+                foreach (var item in TestPreviews)
                 {
-                    TitleBox.Text = item.Title;
-                    TitleBox.FontWeight = FontWeights.ExtraBold;
-
-                    QuestionsBox.Text = "Questions: ";
-                    QuestionsBox.FontWeight = FontWeights.Bold;
-                    QuestionsBox.Inlines.Add(new Run(item.Questions)
+                    if (item.Title == selectedTest)
                     {
-                        FontWeight = FontWeights.Normal
-                    });
+                        TitleBox.Text = item.Title;
+                        TitleBox.FontWeight = FontWeights.ExtraBold;
 
-                    TimeLimitBox.Text = "Time Limit: ";
-                    TimeLimitBox.FontWeight = FontWeights.Bold;
-                    TimeLimitBox.Inlines.Add(new Run(item.TimeLimit)
-                    {
-                        FontWeight = FontWeights.Normal
-                    });
+                        QuestionsBox.Text = "Questions: ";
+                        QuestionsBox.FontWeight = FontWeights.Bold;
+                        QuestionsBox.Inlines.Add(new Run(item.Questions)
+                        {
+                            FontWeight = FontWeights.Normal
+                        });
 
-                    SetByBox.Text = "Set By: ";
-                    SetByBox.FontWeight = FontWeights.Bold;
-                    SetByBox.Inlines.Add(new Run(item.SetBy)
-                    {
-                        FontWeight = FontWeights.Normal
-                    });
+                        TimeLimitBox.Text = "Time Limit: ";
+                        TimeLimitBox.FontWeight = FontWeights.Bold;
+                        TimeLimitBox.Inlines.Add(new Run(item.TimeLimit)
+                        {
+                            FontWeight = FontWeights.Normal
+                        });
 
-                    TopicBox.Text = "Topic: ";
-                    TopicBox.FontWeight = FontWeights.Bold;
-                    TopicBox.Inlines.Add(new Run(item.Topic)
-                    {
-                        FontWeight = FontWeights.Normal
-                    });
+                        SetByBox.Text = "Set By: ";
+                        SetByBox.FontWeight = FontWeights.Bold;
+                        SetByBox.Inlines.Add(new Run(item.SetBy)
+                        {
+                            FontWeight = FontWeights.Normal
+                        });
+
+                        TopicBox.Text = "Topic: ";
+                        TopicBox.FontWeight = FontWeights.Bold;
+                        TopicBox.Inlines.Add(new Run(item.Topic)
+                        {
+                            FontWeight = FontWeights.Normal
+                        });
+                    }
                 }
             }
         }
