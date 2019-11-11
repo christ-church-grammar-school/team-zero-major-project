@@ -98,6 +98,13 @@ namespace TmsFrontend
                 CorrectUsername = "Samuel",
                 CorrectPassword = "Thomas"
             });
+
+            logins.Add(new StudentLogin()
+            {
+                StudentKey = 3,
+                CorrectUsername = "Gno",
+                CorrectPassword = "Lan"
+            });
         }
 
         private void ClimbLadder()

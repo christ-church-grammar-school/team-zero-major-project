@@ -32,7 +32,14 @@ namespace TmsFrontend
             setButtons();
             setTests();
 
-            changeTextBlocks(TestsDisplayed[0].Title as string);
+            if (TestsDisplayed.Count != 0)
+            {
+                changeTextBlocks(TestsDisplayed[0].Title as string);
+            }
+            else
+            {
+                //set all to "No Test"
+            }
         }
 
         //This funtion decalares and adds new objects of type "TestPreview" to

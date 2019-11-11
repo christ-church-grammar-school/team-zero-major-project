@@ -54,7 +54,7 @@ namespace TmsFrontend
                 SetBy = "Graham Nolan",
                 Topic = "C#",
                 Title = "C# Practical Programming Test",
-                Assigned = new int[1] { 1 }
+                Assigned = new int[2] { 1, 3 }
             });
 
 
@@ -69,7 +69,7 @@ namespace TmsFrontend
                 SetBy = "Graham Nolan",
                 Topic = "WPF",
                 Title = "WPF Test",
-                Assigned = new int[2]{ 1, 2 }
+                Assigned = new int[3]{ 1, 2, 3 }
             });
 
             assignTests();
